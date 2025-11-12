@@ -1,135 +1,311 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="ノーコード開発専門の会社の公式サイトです。素早く、柔軟に、誰でも使えるソリューションを提供します。">
-  <title>TUNAGUプロジェクト | あなたのアイデアを即アプリ化</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      margin: 0;
-      background-color: #f8f9fa;
-      color: #333;
-    }
-    header {
-      background-color: #ffffff;
-      padding: 2rem 1.5rem;
-      text-align: center;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    }
-    header h1 {
-      margin: 0;
-      font-size: 2rem;
-      color: #007acc;
-    }
-    header p {
-      font-size: 1rem;
-      margin-top: 0.5rem;
-    }
-    .hero {
-      padding: 3rem 1.5rem;
-      background: linear-gradient(to right, #e3f2fd, #ffffff);
-      text-align: center;
-    }
-    .hero h2 {
-      font-size: 1.75rem;
-      color: #0d47a1;
-      margin-bottom: 1rem;
-    }
-    .hero p {
-      font-size: 1rem;
-      max-width: 600px;
-      margin: 0 auto;
-    }
-    .features {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 2rem;
-      padding: 3rem 1.5rem;
-      background-color: #ffffff;
-    }
-    .feature-box {
-      background-color: #f1f1f1;
-      padding: 1.5rem;
-      border-radius: 0.75rem;
-      max-width: 300px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-    }
-    .feature-box h3 {
-      margin-top: 0;
-      color: #007acc;
-    }
-    .section {
-      padding: 3rem 1.5rem;
-      background-color: #ffffff;
-      text-align: center;
-    }
-    .section h2 {
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-      color: #0d47a1;
-    }
-    .section p {
-      font-size: 1rem;
-      max-width: 700px;
-      margin: 0 auto 1.5rem;
-    }
-    footer {
-      text-align: center;
-      padding: 2rem 1rem;
-      background-color: #e0e0e0;
-      font-size: 0.9rem;
-      color: #555;
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ノーコード開発専門の会社の公式サイトです。素早く、柔軟に、誰でも使えるソリューションを提供します。">
+  <title>TUNAGUプロジェクト | あなたのアイデアを即アプリ化</title>
+    <style>
+    /* カラーパレットと基本設定 */
+    :root {
+      --color-primary: #1A237E; /* インディゴ - 信頼性 */
+      --color-accent: #4DD0E1; /* アクア - スピード、革新性 */
+      --color-background: #FAFAFA;
+      --color-text: #212121;
+      --color-white: #ffffff;
+      --shadow-light: 0 4px 12px rgba(0, 0, 0, 0.08);
+      --shadow-deep: 0 10px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    body {
+      font-family: 'Hiragino Sans', 'メイリオ', 'Meiryo', sans-serif;
+      margin: 0;
+      background-color: var(--color-background);
+      color: var(--color-text);
+      line-height: 1.7;
+    }
+
+    /* ヘッダーとナビゲーション */
+    header {
+      background-color: var(--color-white);
+      box-shadow: var(--shadow-light);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.5rem;
+      color: var(--color-primary);
+      font-weight: 700;
+    }
+
+    nav a {
+      margin-left: 1.5rem;
+      text-decoration: none;
+      color: var(--color-text);
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: var(--color-accent);
+    }
+
+    /* ヒーローセクション */
+    .hero {
+      padding: 5rem 2rem;
+      background: linear-gradient(135deg, var(--color-primary) 0%, #3F51B5 100%);
+      text-align: center;
+      color: var(--color-white);
+      text-shadow: 0 1px 3px rgba(0,0,0,0.2);
+    }
+
+    .hero h2 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-bottom: 1.5rem;
+      letter-spacing: 1px;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin: 0 auto 2rem;
+      opacity: 0.9;
+    }
+
+    /* CTAボタン */
+    .cta-button {
+      display: inline-block;
+      padding: 0.8rem 2.5rem;
+      background-color: var(--color-accent);
+      color: var(--color-primary); /* アクセントに濃い色を合わせてコントラストを出す */
+      text-decoration: none;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+      box-shadow: 0 4px 10px rgba(77, 208, 225, 0.4);
+    }
+
+    .cta-button:hover {
+      background-color: #84FFFF;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 15px rgba(77, 208, 225, 0.6);
+    }
+
+    /* セクション共通 */
+    .section {
+      padding: 4rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .section.dark-bg {
+      background-color: var(--color-white);
+    }
+
+    .section h2 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      color: var(--color-primary);
+      position: relative;
+      display: inline-block;
+    }
+    
+    /* 見出しの下線 (モダンなアクセント) */
+    .section h2::after {
+      content: "";
+      display: block;
+      width: 50%;
+      height: 4px;
+      background-color: var(--color-accent);
+      margin: 8px auto 0;
+      border-radius: 2px;
+    }
+
+    /* 特徴カードのレイアウト */
+    .features-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .feature-box {
+      background-color: var(--color-white);
+      padding: 2rem;
+      border-radius: 12px;
+      max-width: 300px;
+      box-shadow: var(--shadow-light);
+      transition: transform 0.3s, box-shadow 0.3s;
+      border-top: 5px solid var(--color-accent); /* アクセントライン */
+      text-align: left;
+    }
+
+    .feature-box:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-deep);
+    }
+
+    .feature-box h3 {
+      margin-top: 0.5rem;
+      color: var(--color-primary);
+      font-size: 1.4rem;
+      border-bottom: 1px dashed #eee;
+      padding-bottom: 0.5rem;
+      margin-bottom: 1rem;
+    }
+    
+    .icon {
+      font-size: 2rem;
+      color: var(--color-accent);
+      display: block;
+    }
+
+    /* 事業内容 */
+    .service-list {
+      list-style: none;
+      padding: 0;
+      max-width: 600px;
+      margin: 2rem auto;
+      text-align: left;
+    }
+
+    .service-list li {
+      background-color: var(--color-white);
+      padding: 1rem 1.5rem;
+      border-left: 5px solid var(--color-primary);
+      margin-bottom: 10px;
+      border-radius: 4px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+      font-weight: 500;
+    }
+    
+    /* お問い合わせ */
+    .contact-info strong {
+    	color: var(--color-primary);
+    }
+
+    /* フッター */
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      background-color: #E0F7FA; /* ライトなアクセントカラー */
+      font-size: 0.9rem;
+      color: var(--color-primary);
+    }
+
+    /* レスポンシブ対応 */
+    @media (max-width: 768px) {
+      .nav-container {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      nav {
+        margin-top: 1rem;
+      }
+      nav a {
+        margin-left: 0;
+        margin-right: 1rem;
+      }
+      .hero h2 {
+        font-size: 2rem;
+      }
+      .features-grid {
+        flex-direction: column;
+        align-items: center;
+      }
+      .feature-box {
+        max-width: 90%;
+      }
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <h1>TUNAGUプロジェクト</h1>
-    <p>誰でも、どこでも、最速でアイデアを形に。</p>
-  </header>
+  <header>
+    <div class="nav-container">
+      <h1>TUNAGUプロジェクト</h1>
+      <nav>
+        <a href="#hero">ホーム</a>
+        <a href="#features">特徴</a>
+        <a href="#services">事業内容</a>
+        <a href="#contact">お問い合わせ</a>
+      </nav>
+    </div>
+  </header>
 
-  <section class="hero">
-    <h2>ノーコードの力で、ビジネスをもっと自由に。</h2>
-    <p>コードを書かなくても、本格的なアプリ・システムが作れる時代。私たちは、Bubble、Adalo、Glide などのノーコードツールを駆使し、お客様の課題をスピーディに解決します。</p>
-  </section>
+  <section class="hero" id="hero">
+    <h2>
+      アイデアを、**最速**でビジネスに。<br>
+      ノーコードの力で、あなたの未来を**創造**する。
+    </h2>
+    <p>
+      「TUNAGUプロジェクト」は、Bubble、Adalo、Glideなどのノーコード・ローコード技術を専門とする開発パートナーです。<br>
+      従来の開発手法の1/3のコストとスピードで、本格的なWebアプリ・業務システムを実現します。
+    </p>
+    <a href="#contact" class="cta-button">無料相談・資料請求はこちら</a>
+  </section>
 
-  <section class="features">
-    <div class="feature-box">
-      <h3>スピード重視</h3>
-      <p>企画からローンチまで、最短1週間。迅速な開発で市場にすぐ出せます。</p>
-    </div>
-    <div class="feature-box">
-      <h3>コスト削減</h3>
-      <p>従来の開発費用の1/3以下。予算を抑えてスタートできます。</p>
-    </div>
-    <div class="feature-box">
-      <h3>運用もラクラク</h3>
-      <p>開発後の保守・改善もノーコードなら簡単。自社運用も可能です。</p>
-    </div>
-  </section>
+  <section class="section dark-bg" id="features">
+    <h2>TUNAGUプロジェクトが選ばれる理由</h2>
+    <div class="features-grid">
+      <div class="feature-box">
+        <span class="icon">🚀</span>
+        <h3>圧倒的なスピード</h3>
+        <p>企画・設計からローンチまで、最短**1週間**。市場の変化に即応できる、アジャイルな開発を実現します。</p>
+      </div>
+      <div class="feature-box">
+        <span class="icon">💰</span>
+        <h3>スマートなコスト削減</h3>
+        <p>コードレスだからこそ実現できる低コスト開発。従来の受託開発費用の**1/3以下**でスタートが可能です。</p>
+      </div>
+      <div class="feature-box">
+        <span class="icon">🛠️</span>
+        <h3>柔軟な内製化支援</h3>
+        <p>開発後の保守・改善も簡単。ノーコードツールを用いた自社での運用・改善体制構築をサポートします。</p>
+      </div>
+    </div>
+  </section>
 
-  <section class="section">
-    <h2>事業内容</h2>
-    <p>TUNAGUプロジェクトでは、以下のようなノーコード開発支援を行っています。</p>
-    <p>
-      ・業務システムのノーコード構築<br>
-      ・スタートアップ向けプロトタイプ開発<br>
-      ・教育・研修用ノーコードアプリ制作<br>
-      ・ノーコードツールの導入支援および運用支援<br>
-    </p>
-  </section>
+  <section class="section" id="services">
+    <h2>事業内容：ノーコードで「つなぐ」価値</h2>
+    <p>TUNAGUプロジェクトは、お客様の事業フェーズとニーズに合わせた最適なノーコード・ローコードソリューションを提供します。</p>
+    <ul class="service-list">
+      <li>業務プロセスのデジタル化（社内システム・データ管理ツール）</li>
+      <li>スタートアップ向けMVP（最小実行可能製品）プロトタイプ開発</li>
+      <li>顧客向け会員サイト・Webサービス構築</li>
+      <li>ノーコードツールの選定、導入、及びハンズオン運用支援</li>
+    </ul>
+    <a href="#contact" class="cta-button">今すぐプロジェクトを相談する</a>
+  </section>
 
-  <section class="section">
-    <h2>お問い合わせ</h2>
-    <p>ご相談・ご依頼・取材など、お気軽にご連絡ください。</p>
-    <p><strong>メール：</strong><a href="mailto:contact@tunagu.com">contact@tunagu.com</a></p>
-  </section>
+  <section class="section dark-bg" id="contact">
+    <h2>お問い合わせ</h2>
+    <p>
+      「こんなアプリは作れる？」「予算内で実現したい」など、どんなご相談でも構いません。<br>
+      経験豊富な専門チームが、あなたのアイデア実現をサポートします。
+    </p>
+    <div class="contact-info">
+      <p><strong>メール：</strong><a href="mailto:contact@tunagu.com">contact@tunagu.com</a></p>
+    </div>
+  </section>
 
-  <footer>
-    &copy; 2025 TUNAGUプロジェクト. All rights reserved.
-  </footer>
+  <footer>
+    <small>&copy; 2025 TUNAGUプロジェクト. All rights reserved.</small>
+  </footer>
 </body>
 </html>
